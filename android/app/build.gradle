@@ -6,6 +6,8 @@ plugins {
 }
 
 android {
+    compileSdkVersion 33
+    buildToolsVersion "33.0.0" 
     namespace = "com.example.firstapp"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion

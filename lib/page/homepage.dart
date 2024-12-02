@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
 
 import 'package:firstapp/page/keyboard_view.dart';
 import 'package:firstapp/page/wordleview.dart';
@@ -77,22 +77,21 @@ class _HomepageState extends State<Homepage> {
                       } 
                       if (value.longenough) {
                         value.checkAnswer();
-                        print("asdasd5");
+                        
                         
                       }
                       if (value.wins) {
-                              showDialog(
+                        showDialog(
                             context: context,
                             builder: (BuildContext context) {
-                              return Popup();
+                              return Popup(wins: value.wins);
                             },
                           );
-                        
                       } else if (value.noAttemptsLeft) {
                         showDialog(
                           context: context,
                           builder: (BuildContext context) {
-                            return Popup();
+                            return Popup(wins: false);
                           },
                         );
                       }
