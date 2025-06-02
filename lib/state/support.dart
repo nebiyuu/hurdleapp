@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors
 
 import 'package:firstapp/state/providee.dart';
 import 'package:flutter/material.dart';
@@ -16,18 +15,18 @@ class PpopupState extends State<Popup> {
   Widget build(BuildContext context) {
     if (widget.wins) {
       return AlertDialog(
-        title: Text('You Won!'),
-        content: Text('Congratulations! You have won the game.'),
+        title: const Text('You Won!'),
+        content: const Text('Congratulations! You have won the game.'),
         actions: <Widget>[
           TextButton(
-            child: Text('Try Again'),
+            child: const Text('Try Again'),
             onPressed: () {
               Provider.of<Providee>(context, listen: false).reset();
               Navigator.of(context).pop();
             },
           ),
           TextButton(
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -36,18 +35,18 @@ class PpopupState extends State<Popup> {
       );
     } else {
       return AlertDialog(
-        title: Text('Game Over'),
-        content: Text('Sorry, you didn\'t win this time. Better luck next time!'),
+        title: const Text('Game Over'),
+        content: const Text('Sorry, you didn\'t win this time. Better luck next time!'),
         actions: <Widget>[
           TextButton(
-            child: Text('Try Again'),
+            child: const Text('Try Again'),
             onPressed: () {
               Provider.of<Providee>(context, listen: false).reset();
               Navigator.of(context).pop();
             },
           ),
           TextButton(
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
             onPressed: () {
               Navigator.of(context).pop();
             },

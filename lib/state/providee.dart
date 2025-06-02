@@ -1,8 +1,7 @@
-// ignore_for_file: avoid_print
 
 import 'dart:math';
 import 'package:english_words/english_words.dart' as words;
-import 'package:firstapp/state/wordle.dart';
+import 'package:firstapp/model/wordle.dart';
 import 'package:flutter/material.dart';
 
 class Providee extends ChangeNotifier {
@@ -44,20 +43,16 @@ class Providee extends ChangeNotifier {
 
   generateword() {
     targetword = totalwords[random.nextInt(totalwords.length)].toUpperCase();
-    print(targetword);
   }
 
   inputword(String letter) {
     if (count < maxperrow) {
       rowinputs.add(letter);
         boardlist[rowindecator * maxperrow + count] = Wordle(letter: letter); // Update the board
-      print('count: $rowindecator');
       count++;
       index++;
-      print("rowinputs: $rowinputs");
       notifyListeners();
     } else {
-      print("overbound");
     }
   }
 
@@ -71,7 +66,6 @@ class Providee extends ChangeNotifier {
     }
     boardlist[rowindecator * maxperrow + count - 1] = Wordle(letter: " ");
     count--;
-    print("rowinputs: $rowinputs");
     notifyListeners();
   }
 
@@ -89,7 +83,6 @@ class Providee extends ChangeNotifier {
           else{
             _markLetterOnBoard();
             if (attempts<totalAttempts) {
-              print("is it tho");
               _goToNextRow();
               
             }
@@ -117,11 +110,9 @@ class Providee extends ChangeNotifier {
   }
   
   void _goToNextRow() {
-    print("before cleared");
     attempts++;
     count = 0;
     rowinputs.clear();
-    print("after cleared");
     notifyListeners();
 
   }

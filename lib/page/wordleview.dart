@@ -1,5 +1,4 @@
-// ignore: file_names
-import 'package:firstapp/state/wordle.dart';
+import 'package:firstapp/model/wordle.dart';
 import 'package:flutter/material.dart';
 
 class WordleView extends StatelessWidget {

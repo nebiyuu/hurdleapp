@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
 
 import 'package:firstapp/page/keyboard_view.dart';
 import 'package:firstapp/page/wordleview.dart';
@@ -26,7 +25,7 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("hurdle"),
+          title: const Text("hurdle"),
         ),
         body: Center(
           child: Column(children: [
@@ -35,7 +34,7 @@ class _HomepageState extends State<Homepage> {
                 width: MediaQuery.of(context).size.width * 0.7,
                 child: Consumer<Providee>(
                     builder: (context, value, child) => GridView.builder(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 5,
                           mainAxisSpacing: 4,
                           crossAxisSpacing: 4,
@@ -64,16 +63,16 @@ class _HomepageState extends State<Homepage> {
                     },
                     style: ElevatedButton.styleFrom(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 25, vertical: 12),
-                      textStyle: TextStyle(fontSize: 16),
+                          const EdgeInsets.symmetric(horizontal: 25, vertical: 12),
+                      textStyle: const TextStyle(fontSize: 16),
                     ),
-                    child: Text('delete'),
+                    child: const Text('delete'),
                   ),
                   ElevatedButton(
                     onPressed: () {
                       if (!value.isvalid) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text("Not a valid word!"), duration: Duration(seconds: 1)));
+                            const SnackBar(content: Text("Not a valid word!"), duration: Duration(seconds: 1)));
                       } 
                       if (value.longenough) {
                         value.checkAnswer();
@@ -91,17 +90,17 @@ class _HomepageState extends State<Homepage> {
                         showDialog(
                           context: context,
                           builder: (BuildContext context) {
-                            return Popup(wins: false);
+                            return const Popup(wins: false);
                           },
                         );
                       }
                     },
                     style: ElevatedButton.styleFrom(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 25, vertical: 12),
-                      textStyle: TextStyle(fontSize: 16),
+                          const EdgeInsets.symmetric(horizontal: 25, vertical: 12),
+                      textStyle: const TextStyle(fontSize: 16),
                     ),
-                    child: Text('submit'),
+                    child: const Text('submit'),
                   ),
                 ],
               ),

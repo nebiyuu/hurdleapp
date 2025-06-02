@@ -1,4 +1,3 @@
-// ignore_for_file: avoid_print, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
@@ -90,7 +89,7 @@ class VirtualKey extends StatelessWidget {
     return Expanded(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: excluded ? Colors.red : Color.fromARGB(255, 0, 0, 0),
+          backgroundColor: excluded ? Colors.red : const Color.fromARGB(255, 0, 0, 0),
           foregroundColor: Colors.white,
           padding: EdgeInsets.zero,
         ),
